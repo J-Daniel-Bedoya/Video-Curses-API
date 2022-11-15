@@ -21,30 +21,30 @@ const getUserById = async (req, res, next) => {
   }
 };
 
-const getUserWithAddres = async (req, res, next) => {
+const getUserWithCourses = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await UserServices.getUserJoinAddres(id);
+    const result = await UserServices.getUserJoinCourses(id);
     res.status(200).json(result);
   } catch (error) {
     next(error);
   }
 };
 
-const getUserWithTasks = async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const result = await UserServices.getUserJoinTasks(id);
-    res.status(200).json(result);
-  } catch (error) {
-    next(error);
-  }
-};
+// const getUserWithTasks = async (req, res, next) => {
+//   try {
+//     const { id } = req.params;
+//     const result = await UserServices.getUserJoinTasks(id);
+//     res.status(200).json(result);
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 const createUser = async (req, res, next) => {
   try {
     const newUser = req.body;
-    console.log(newUser);
+    // console.log(newUser);
     const result = await UserServices.add(newUser);
     res.status(201).json(result);
   } catch (error) {
@@ -70,8 +70,8 @@ const updateUser = async (req, res, next) => {
 module.exports = {
   getAllUsers,
   getUserById,
-  getUserWithAddres,
-  getUserWithTasks,
+  getUserWithCourses,
+  // getUserWithTasks,
   createUser,
   updateUser,
 };

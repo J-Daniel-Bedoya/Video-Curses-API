@@ -26,19 +26,16 @@ const Courses = db.define('courses', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  categories: {
+  categoriesId: {
     type: DataTypes.INTEGER,
     references: {
       key: "id",
       model: Categories,
     },
-    field: "categories",
+    field: "categories_id",
     allowNull: false,
-  }
+  },
 
-},
-{
-  timestamps: false
 });
 
 module.exports = Courses;

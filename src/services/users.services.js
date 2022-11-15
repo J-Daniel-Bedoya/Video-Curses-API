@@ -1,8 +1,8 @@
 // importar el modelo donde estaremos haciendo las consultas
-const Address = require("../models/addresses.models");
+const Videos = require("../models/videos.models");
 const Categories = require("../models/categories.models");
-const TaskCategories = require("../models/tasksCategories.models");
-const Tasks = require("../models/tasks.models");
+const UsersCourses = require("../models/usersCourses.models");
+const Courses = require("../models/courses.model");
 const Users = require("../models/users.models");
 
 class UserServices {
@@ -10,7 +10,7 @@ class UserServices {
     // select id, username, email from users;
     try {
       const result = await Users.findAll({
-        attributes: ["id", "username", "email"],
+        attributes: ["id", "name", "email"],
       }); // select * from users;
       return result;
     } catch (error) {
@@ -21,7 +21,7 @@ class UserServices {
   static async getById(id) {
     try {
       const result = await Users.findByPk(id, {
-        attributes: ["id", "username", "email"],
+        attributes: ["id", "name", "email"],
       });
       return result;
     } catch (error) {
@@ -29,16 +29,16 @@ class UserServices {
     }
   }
 
-  static async getUserJoinAddres(id) {
+  static async getUserJoinCourses(id) {
     try {
       const result = await Users.findOne({
         where: { id }, // {id: id}
-        attributes: ["id", "username"], // incluyo columnas
+        attributes: ["id", "name"], // incluyo columnas
         include: {
-          model: Address,
-          as: "home",
+          model: Courses,
+          as: "course",
           attributes: {
-            exclude: ["id", "user_id", "userId"], // excluyo columnas
+            exclude: ["id", "categories_id", "categoriesId"], // excluyo columnas
           },
         },
       });
@@ -48,32 +48,32 @@ class UserServices {
     }
   }
 
-  static async getUserJoinTasks(id) {
-    try {
-      const result = await Users.findOne({
-        where: { id },
-        attributes: ["username"],
-        include: {
-          model: Tasks,
-          as: "todos",
-          attributes: ["title", "description", "is_complete"],
-          include: {
-            model: TaskCategories,
-            as: "categories",
-            attributes: ["category_id"],
-            include: {
-              model: Categories,
-              as: "category",
-              attributes: ["name"],
-            },
-          },
-        },
-      });
-      return result;
-    } catch (error) {
-      throw error;
-    }
-  }
+  // static async getUserJoinCourses(id) {
+  //   try {
+  //     const result = await Users.findOne({
+  //       where: { id },
+  //       attributes: ["username"],
+  //       include: {
+  //         model: Courses,
+  //         as: "todos",
+  //         attributes: ["title", "description", "is_complete"],
+  //         include: {
+  //           model: TaskCategories,
+  //           as: "categories",
+  //           attributes: ["category_id"],
+  //           include: {
+  //             model: Categories,
+  //             as: "category",
+  //             attributes: ["name"],
+  //           },
+  //         },
+  //       },
+  //     });
+  //     return result;
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // }
 
   static async add(newUser) {
     try {
