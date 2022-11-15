@@ -13,21 +13,21 @@ const UsersCourses = db.define('usersCourses', {
   },
   usersId: {
     type: DataTypes.INTEGER,
+    allowNull: false,
     references: {
       key: "id",
       model: Users,
     },
     field: "users_id",
-    allowNull: false,
   },
   coursesId: {
     type: DataTypes.INTEGER,
+    allowNull: false,
     references: {
       key: "id",
       model: Courses,
     },
     field: "courses_id",
-    allowNull: false,
   },
 },
 {

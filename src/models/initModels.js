@@ -19,6 +19,9 @@ const initModels = () => {
   UsersCourses.belongsTo(Courses, { as: "relacionCourseOne", foreignKey: "courses_id" });
   Courses.hasMany(UsersCourses, { as: "relacionCourseTwo", foreignKey: "courses_id" });
 
+  // Users.belongsTo(Courses, { as: "estudiante", foreignKey: "users_id" });
+  // Courses.hasMany(Users, { as: "profesor", foreignKey: "users_id" });
+
 };
 
 module.exports = initModels;

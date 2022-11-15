@@ -31,10 +31,10 @@ const getUserWithCourses = async (req, res, next) => {
   }
 };
 
-// const getUserWithTasks = async (req, res, next) => {
+// const getUserWithCourses2 = async (req, res, next) => {
 //   try {
 //     const { id } = req.params;
-//     const result = await UserServices.getUserJoinTasks(id);
+//     const result = await UserServices.getUserJoinCourses2(id);
 //     res.status(200).json(result);
 //   } catch (error) {
 //     next(error);
@@ -71,7 +71,7 @@ module.exports = {
   getAllUsers,
   getUserById,
   getUserWithCourses,
-  // getUserWithTasks,
+  // getUserWithCourses2,
   createUser,
   updateUser,
 };

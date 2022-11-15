@@ -36,9 +36,9 @@ class UserServices {
         attributes: ["id", "name"], // incluyo columnas
         include: {
           model: Courses,
-          as: "course",
+          as: "estudiante",
           attributes: {
-            exclude: ["id", "categories_id", "categoriesId"], // excluyo columnas
+            exclude: ["id", "categoriesId"], // excluyo columnas
           },
         },
       });
@@ -48,7 +48,7 @@ class UserServices {
     }
   }
 
-  // static async getUserJoinCourses(id) {
+  // static async getUserJoinCourses2(id) {
   //   try {
   //     const result = await Users.findOne({
   //       where: { id },

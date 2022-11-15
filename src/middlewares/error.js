@@ -1,9 +1,9 @@
 const handleError = (error, req, res, next) => {
-  const { status, errorContent, message } = error;
+  const { errorContent, message } = error;
   console.log("capturando el error");
-  res.status(status).json({
+  res.status(500).json({
     message,
-    error: errorContent.message,
+    error: errorContent?.message,
   });
 };
 
