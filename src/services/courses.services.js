@@ -1,13 +1,15 @@
-const Categories = require("../models/categories.models");
+// const Categories = require("../models/categories.models");
 const Courses = require("../models/courses.models");
 
 
 class CoursesServices {
   static async getAll() {
     try {
-      const result = await Courses.findAll({
-        attributes: ["id", "title"],
-      });
+      const result = await Courses.findAll(
+        // {
+        // attributes: ["id", "title", "description"],
+      // }
+      );
       console.log(result)
       return result;
     } catch (error) {

@@ -14,6 +14,11 @@ const users = [
   { name: "Alvis Echeverria", email: "alvis@gmail.com", password: "3634" },
   { name: "Carlos Tineo", email: "carlos@gmail.com", password: "9034" },
 ];
+const categories = [
+  { name: "básico" }, // 1 . 1, 4, 5
+  { name: "intermedio" }, // 2
+  { name: "premium" }, // 3
+];
 
 const courses = [
   { title: "Exel", description: "Curso intensivo", instructor: "Rosaura", price: 17, categoriesId: 1 },
@@ -48,11 +53,7 @@ const videos = [
   },
 ];
 
-const categories = [
-  { name: "básico" }, // 1 . 1, 4, 5
-  { name: "intermedio" }, // 2
-  { name: "premium" }, // 3
-];
+
 
 const usco = [
   { userId: 1, courseId: 2 },
@@ -69,10 +70,10 @@ db.sync({ force: true }).then(async () => {
   users.forEach((user) => Users.create(user));
 
   setTimeout(() => {
-    courses.forEach((cat) => Courses.create(cat));
+    categories.forEach((category) => Categories.create(category));
   }, 100);
   setTimeout(() => {
-    categories.forEach((category) => Categories.create(category));
+    courses.forEach((cat) => Courses.create(cat));
   }, 200);
   setTimeout(() => {
     videos.forEach((vid) => Videos.create(vid));
