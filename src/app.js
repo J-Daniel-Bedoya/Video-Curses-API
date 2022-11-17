@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 const express = require('express');
 const db = require('./utils/database');
 const initModels = require("./models/initModels");
@@ -23,10 +23,8 @@ app.get('/', (req, res) => {
   
 app.use("/api/v1", require("./routes"))
 
-const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Servidor iniciado en el PORT ${PORT}`);
-});
 
 app.use(handleError);
+
+module.exports = app;
