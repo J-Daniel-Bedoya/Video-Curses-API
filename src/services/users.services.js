@@ -21,7 +21,7 @@ class UserServices {
   static async getById(id) {
     try {
       const result = await Users.findByPk(id, {
-        attributes: ["id", "name", "email"],
+        attributes: ["id", "name"],
       });
       return result;
     } catch (error) {
@@ -37,10 +37,6 @@ class UserServices {
         include: {
           model: Courses,
           attributes: ["id", "title" ],
-          // include: {
-          //   model: UsersCourses,
-          //   att
-          // }
         },
       });
       return result;
@@ -74,7 +70,7 @@ class UserServices {
   static async update(updateData, id) {
     try {
       const { name, password } = updateData;
-      const result = await Users.update(updateData, {
+      const result = await Users.update({name: name, password: password}, {
         where: { id },
       });
       return result;

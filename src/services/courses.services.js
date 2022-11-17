@@ -28,25 +28,22 @@ class CoursesServices {
   }
   static async getByCourseId(id) {
     try {
-      const result = await Courses.findAll({
+      const result = await Courses.findOne({
         where: { id },
-        attributes: {
-          include: { 
-            course: ["categorieId", "categories_id", "createdAt", "updatedAt"],
-            include: {
-              model: Categories,
-              attributes: ["name"],
-            },
-          }
+        attributes: { 
+          exclude: ["categorieId", "categories_id", "createdAt", "updatedAt"]
+        },
+        include: [
+          {
+            model: Categories,
+            attributes: ["name"],
+          },
+          {
+            model: Videos,
+            attributes: ["title", "url"]
+          },
           
-        },
-
-        include: {
-          model: Videos,
-          attributes: {
-            exclude: ["courses_id", "coursesId"]
-          }
-        },
+        ]
       });
       return result;
     } catch (error) {
@@ -58,43 +55,60 @@ class CoursesServices {
     try {
       const result = await Courses.create(course);
       return result;
-      // devuelve es un objeto con la tarea creada {id, title, description, isComplete, creat, uptade}
-      // const { id } = taskResult;
-      // categories.forEach(
-      //   async (category) =>
-      //     await TaskCategories.create({ categoryId: category, taskId: id })
-      // );
+    } catch (error) {
+      throw error;
+    }
+  }
+  
+  static async updateStatus(id, description) {
+    try{
+      const result = await Courses.update({description: description}, {
+        where:{id}
+      });
+      return result;
+    }catch (error){
+      throw(error);
+    }
+  }
+
+  static async videoPost(video) {
+    try {
+      const result = await Videos.create(video);
+      return result;
     } catch (error) {
       throw error;
     }
   }
 
-  // static async updateStatus(id) {
-  //   try {
-  //     const result = await Tasks.update(
-  //       { isComplete: true },
-  //       {
-  //         where: { id },
-  //       }
-  //     );
-  //     return result;
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // }
-//   static async create(course, userId, category) {
-//     try {
-//       const courseResult = await Courses.create(course);
-//       // devuelve es un objeto con la tarea creada {id, title, description, isComplete, creat, uptade}
-//       const { id } = courseResult;
-//       Categories.create({name: category, course_id: id})
-//       usersCourses.create({ userId: userId, courseId: id })
-//       return courseResult;
-      
-//     } catch (error) {
-//       throw error;
-//     }
-//   }
+  static async videoDelete(id) {
+    try {
+      const result = await Videos.destroy({
+        where: { id }
+      });
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  
+  static async categoriesPost(categories) {
+    try {
+      const result = await Categories.create(categories);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  static async categoriesDelete(id) {
+    try {
+      const result = await Categories.destroy({
+        where: { id }
+      });
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = CoursesServices;

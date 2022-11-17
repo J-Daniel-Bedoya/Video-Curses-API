@@ -29,7 +29,7 @@ const Videos = db.define('videos', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  coursesId: {
+  courseId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: "courses_id",

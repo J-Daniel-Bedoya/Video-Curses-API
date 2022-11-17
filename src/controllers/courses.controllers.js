@@ -29,13 +29,6 @@ const getCourseById = async (req, res, next) => {
   }
 };
 
-// /* 
-//   {
-//     task: {idUser, title, description}, 
-//     categories: [1, 4]
-//   }
-// */
-
 const createCourse = async (req, res, next) => {
   try {
     const course = req.body;
@@ -50,25 +43,83 @@ const createCourse = async (req, res, next) => {
   }
 };
 
+const updateCourse = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { description } = req.body;
+    const result = await CoursesServices.updateStatus(id, description);
+    res.status(200).json({ message: "Curso actualizado" });
+  } catch (error) {
+    next({
+      message: "No se ha podido actualizar la tarea",
+      status: 400,
+      error: error,
+    });
+  }
+};
 
+const createVideo = async (req, res, next) => {
+  try {
+    const video = req.body;
+    const result = await CoursesServices.videoPost(video);
+    res.status(200).json(result)
+  } catch (error) {
+    next({
+      message: "No se ha podido actualizar la tarea",
+      status: 400,
+      error: error,
+    });
+  }
+};
+const deleteVideo = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const result = await CoursesServices.videoDelete(id);
+    res.status(200).json(result)
+  } catch (error) {
+    next({
+      message: "No se ha podido actualizar la tarea",
+      status: 400,
+      error: error,
+    });
+  }
+};
 
-// const completeCourse = async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
-//     const result = await CoursesServices.updateStatus(id);
-//     res.status(200).json({ result, message: "Tarea actualizada" });
-//   } catch (error) {
-//     next({
-//       message: "No se ha podido actualizar la tarea",
-//       status: 400,
-//       error: error,
-//     });
-  // }
-// };
+const createCategories = async (req, res, next) => {
+  try {
+    const categories = req.body;
+    const result = await CoursesServices.categoriesPost(categories);
+    res.status(200).json(result)
+  } catch (error) {
+    next({
+      message: "No se ha podido actualizar la tarea",
+      status: 400,
+      error: error,
+    });
+  }
+};
+
+const deleteCategories = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const result = await CoursesServices.categoriesDelete(id);
+    res.status(200).json(result)
+  } catch (error) {
+    next({
+      message: "No se ha podido actualizar la tarea",
+      status: 400,
+      error: error,
+    });
+  }
+};
 
 module.exports = {
   getAllCourses,
   getCourseById,
   createCourse,
-  // completeCourse
+  updateCourse,
+  createVideo,
+  deleteVideo,
+  createCategories,
+  deleteCategories,
 };

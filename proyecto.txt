@@ -59,6 +59,8 @@ para obtener la siguiente información
 // Rutas para videos
   J. Crear videos
   K. Eliminar videos
+
+// Rutas para Categorias
   L. Crear categorías
   M. Eliminar categorías
 

@@ -33,7 +33,7 @@ const videos = [
     instructor: "Rosaura",
     url: "el",
     duration: 130000,
-    coursesId: 1,
+    courseId: 1,
   },
   {
     title: "Enseñando ES6 nv1",
@@ -41,7 +41,7 @@ const videos = [
     instructor: "Rafael",
     url: "et",
     duration: 240000,
-    coursesId: 3,
+    courseId: 3,
   },
   {
     title: "Enseñando React nv1",
@@ -49,7 +49,7 @@ const videos = [
     instructor: "Alejandra",
     url: "ev",
     duration: 160000,
-    coursesId: 2,
+    courseId: 2,
   },
   {
     title: "Enseñando React nv2",
@@ -57,7 +57,7 @@ const videos = [
     instructor: "Alejandra",
     url: "tv",
     duration: 180000,
-    coursesId: 2,
+    courseId: 2,
   },
 ];
 
