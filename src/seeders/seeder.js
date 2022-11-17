@@ -21,9 +21,9 @@ const categories = [
 ];
 
 const courses = [
-  { title: "Exel", description: "Curso intensivo", instructor: "Rosaura", price: 17, categoriesId: 1 },
-  { title: "React", description: "Algo profecional", instructor: "Alejandra", price: 157, categoriesId: 3 },
-  { title: "ES6", description: "Aprofundidad", instructor: "Rafael", price: 15, categoriesId: 2 },
+  { title: "Exel", description: "Curso intensivo", instructor: "Rosaura", price: 17, categorieId: 1 },
+  { title: "React", description: "Algo profecional", instructor: "Alejandra", price: 157, categorieId: 3 },
+  { title: "ES6", description: "Aprofundidad", instructor: "Rafael", price: 15, categorieId: 2 },
 ];
 
 const videos = [
@@ -49,6 +49,14 @@ const videos = [
     instructor: "Alejandra",
     url: "ev",
     duration: 160000,
+    coursesId: 2,
+  },
+  {
+    title: "Enseñando React nv2",
+    description: "primera clase",
+    instructor: "Alejandra",
+    url: "tv",
+    duration: 180000,
     coursesId: 2,
   },
 ];

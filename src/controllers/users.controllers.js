@@ -31,15 +31,16 @@ const getUserWithCourses = async (req, res, next) => {
   }
 };
 
-// const getUserWithCourses2 = async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
-//     const result = await UserServices.getUserJoinCourses2(id);
-//     res.status(200).json(result);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+const postUserWithCourses = async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+    const { courseId } = req.body;
+    const result = await UserServices.postUserJoinCourses(userId, courseId);
+    res.status(200).json(result);
+  } catch (error) {
+    next(error);
+  }
+};
 
 const createUser = async (req, res, next) => {
   try {
@@ -71,7 +72,7 @@ module.exports = {
   getAllUsers,
   getUserById,
   getUserWithCourses,
-  // getUserWithCourses2,
+  postUserWithCourses,
   createUser,
   updateUser,
 };

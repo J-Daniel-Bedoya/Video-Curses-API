@@ -41,17 +41,22 @@ userCourses.model.js
 3). Cuando los modelos estén creados y tengas tu conexión a la base de datos genera las rutas necesarias 
 para obtener la siguiente información
 
+// Rutas para users
   A. Obtener a un usuario por su id (Deberás mostrar la información del usuario menos created_at, updated_at y password)
   B. Obtener a un usuario junto con los cursos donde esta suscrito (Mostrar los mismos datos del usuario que 
   en el punto anterior junto al nombre del curso)
   C. Crear un usuario
   D. Actualizar un usuario, (solo se permitirá los nombres y la contraseña)
   E. Agregar un curso a un usuario
+
+// Rutas para courses
   F. Obtener todos los cursos
   G. Obtener todos los cursos junto a sus categorías y sus videos (de las categorías solo deberás mostrar el nombre, 
   de los videos solo deberás mostrar el nombre y su url
   H. Crear un nuevo curso
   I. Editar un curso (solo se permite cambiar la descripción)
+
+// Rutas para videos
   J. Crear videos
   K. Eliminar videos
   L. Crear categorías

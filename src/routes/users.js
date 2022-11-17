@@ -5,7 +5,7 @@ const {
   getAllUsers,
   getUserById,
   getUserWithCourses,
-  // getUserWithCourses2,
+  postUserWithCourses,
   createUser,
   updateUser,
 } = require("../controllers/users.controllers");
@@ -17,10 +17,10 @@ router.get("/:id", getUserById);
 
 router.get("/:id/courses", getUserWithCourses);
 
-// router.get("/users/:id/courses2", getUserWithCourses2);
-
 router.post("/", createUser);
 
 router.put("/:id", updateUser);
+
+router.post("/:userId", postUserWithCourses);
 
 module.exports = router;

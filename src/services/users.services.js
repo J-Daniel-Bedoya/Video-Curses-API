@@ -49,32 +49,18 @@ class UserServices {
     }
   }
 
-  // static async getUserJoinCourses2(id) {
-  //   try {
-  //     const result = await Users.findOne({
-  //       where: { id },
-  //       attributes: ["username"],
-  //       include: {
-  //         model: Courses,
-  //         as: "todos",
-  //         attributes: ["title", "description", "is_complete"],
-  //         include: {
-  //           model: TaskCategories,
-  //           as: "categories",
-  //           attributes: ["category_id"],
-  //           include: {
-  //             model: Categories,
-  //             as: "category",
-  //             attributes: ["name"],
-  //           },
-  //         },
-  //       },
-  //     });
-  //     return result;
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // }
+  static async postUserJoinCourses(id, courseId) {
+    try {
+      const result = await UsersCourses.create({ 
+        userId: id, 
+        courseId: courseId 
+      })
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+  
 
   static async add(newUser) {
     try {
@@ -100,8 +86,4 @@ class UserServices {
 
 module.exports = UserServices;
 
-const esperar = async (random) => {
-  const l = await random * 2;
-  const f = l * 6;
-}
 

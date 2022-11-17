@@ -3,20 +3,20 @@ const router = express.Router();
 
 const {
   getAllCourses,
-  // getCourseById,
+  getCourseById,
   // getCoursesWithCategoriesVideos,
-  // createCourse,
+  createCourse,
   // updateCourse,
 } = require("../controllers/courses.controllers");
 
 
 router.get("/", getAllCourses);
 
-// router.get("/:id", getCourseById);
+router.get("/:id", getCourseById);
 
 // router.get("/:id/categories_and_videos", getCoursesWithCategoriesVideos);
 
-// router.post("/", createCourse);
+router.post("/", createCourse);
 
 // router.put("/:id", updateCourse);
 

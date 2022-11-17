@@ -24,7 +24,7 @@ const Courses = db.define('courses', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  categoriesId: {
+  categorieId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: "categories_id",
