@@ -7,20 +7,14 @@ const Videos = require("./videos.models");
 
 const initModels = () => {
 
-  Videos.belongsTo(Courses, { as: "material", foreignKey: "courses_id" });
-  Courses.hasMany(Videos, { as: "contenido", foreignKey: "courses_id" });
+  Videos.belongsTo(Courses, { foreignKey: "courses_id" });
+  Courses.hasMany(Videos, { foreignKey: "courses_id" });
 
-  Courses.belongsTo(Categories, { as: "Category", foreignKey: "categories_id" });
-  Categories.hasMany(Courses, { as: "Categories", foreignKey: "categories_id" });
+  Courses.belongsTo(Categories, { foreignKey: "categories_id" });
+  Categories.hasMany(Courses, { foreignKey: "categories_id" });
 
-  UsersCourses.belongsTo(Users, { as: "relacionUserOne", foreignKey: "users_id" });
-  Users.hasMany(UsersCourses, { as: "realcionUserTwo", foreignKey: "users_id" });
-
-  UsersCourses.belongsTo(Courses, { as: "relacionCourseOne", foreignKey: "courses_id" });
-  Courses.hasMany(UsersCourses, { as: "relacionCourseTwo", foreignKey: "courses_id" });
-
-  // Users.belongsTo(Courses, { as: "estudiante", foreignKey: "users_id" });
-  // Courses.hasMany(Users, { as: "profesor", foreignKey: "users_id" });
+  Users.belongsToMany(Courses, { through: "usersCourses" });
+  Courses.belongsToMany(Users, { through: "usersCourses" });
 
 };
 

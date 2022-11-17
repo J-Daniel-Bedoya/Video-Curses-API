@@ -55,12 +55,12 @@ const categories = [
 ];
 
 const usco = [
-  { usersId: 1, coursesId: 2 },
-  { usersId: 1, coursesId: 3 },
-  { usersId: 2, coursesId: 1 },
-  { usersId: 2, coursesId: 2 },
-  { usersId: 2, coursesId: 3 },
-  { usersId: 3, coursesId: 1 },
+  { userId: 1, courseId: 2 },
+  { userId: 1, courseId: 3 },
+  { userId: 2, courseId: 1 },
+  { userId: 2, courseId: 2 },
+  { userId: 2, courseId: 3 },
+  { userId: 3, courseId: 1 },
 ];
 
 db.sync({ force: true }).then(async () => {

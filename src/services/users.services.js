@@ -32,14 +32,15 @@ class UserServices {
   static async getUserJoinCourses(id) {
     try {
       const result = await Users.findOne({
-        where: { id }, // {id: id}
-        attributes: ["id", "name"], // incluyo columnas
+        where: { id }, 
+        attributes: ["id", "name"], 
         include: {
           model: Courses,
-          as: "estudiante",
-          attributes: {
-            exclude: ["id", "categoriesId"], // excluyo columnas
-          },
+          attributes: ["id", "title"],
+          // include: {
+          //   model: UsersCourses,
+          //   att
+          // }
         },
       });
       return result;
@@ -86,6 +87,7 @@ class UserServices {
 
   static async update(updateData, id) {
     try {
+      const { name, password } = updateData;
       const result = await Users.update(updateData, {
         where: { id },
       });
@@ -97,3 +99,8 @@ class UserServices {
 }
 
 module.exports = UserServices;
+
+const esperar = async (random) => {
+  const l = await random * 2;
+  const f = l * 6;
+}

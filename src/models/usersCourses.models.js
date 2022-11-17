@@ -3,7 +3,6 @@ const { DataTypes } = require('sequelize');
 const Users = require('./users.models');
 const Courses = require('./courses.model');
 
-
 const UsersCourses = db.define('usersCourses', {
   id: {
     type: DataTypes.INTEGER,
@@ -11,23 +10,23 @@ const UsersCourses = db.define('usersCourses', {
     autoIncrement: true,
     allowNull: false
   },
-  usersId: {
+  userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    field: "users_id",
     references: {
       key: "id",
       model: Users,
     },
-    field: "users_id",
   },
-  coursesId: {
+  courseId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    field: "courses_id",
     references: {
       key: "id",
       model: Courses,
     },
-    field: "courses_id",
   },
 },
 {
