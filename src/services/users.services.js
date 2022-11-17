@@ -2,7 +2,7 @@
 const Videos = require("../models/videos.models");
 const Categories = require("../models/categories.models");
 const UsersCourses = require("../models/usersCourses.models");
-const Courses = require("../models/courses.model");
+const Courses = require("../models/courses.models");
 const Users = require("../models/users.models");
 
 class UserServices {
@@ -36,7 +36,7 @@ class UserServices {
         attributes: ["id", "name"], 
         include: {
           model: Courses,
-          attributes: ["id", "title"],
+          attributes: ["id", "title" ],
           // include: {
           //   model: UsersCourses,
           //   att

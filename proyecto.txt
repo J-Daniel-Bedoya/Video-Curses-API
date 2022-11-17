@@ -11,7 +11,7 @@ En un nuevo proyecto de express y tomando como base el siguiente diagrama entida
 
 Captura de Pantalla 2022-11-04 a la(s) 12.12.52.png
 
-Genera los modelos necesarios en sequelize (En la carpeta models)
+1). Genera los modelos necesarios en sequelize (En la carpeta models)
 
 /proyecto
 
@@ -31,30 +31,31 @@ videos.models.js
 
 userCourses.model.js
 
-Genera las relaciones necesarias entre las tablas
+2). Genera las relaciones necesarias entre las tablas
 
-1 - 1 (uno a uno)
-1 - N (uno a muchos)
-M - N (muchos a muchos)
-Recuerda crearlas en el archivo initModels dentro de la carpeta models
-Cuando los modelos estén creados y tengas tu conexión a la base de datos genera las rutas necesarias 
+  1 - 1 (uno a uno)
+  1 - N (uno a muchos)
+  M - N (muchos a muchos)
+  Recuerda crearlas en el archivo initModels dentro de la carpeta models
+
+3). Cuando los modelos estén creados y tengas tu conexión a la base de datos genera las rutas necesarias 
 para obtener la siguiente información
 
-Obtener a un usuario por su id (Deberás mostrar la información del usuario menos created_at, updated_at y password)
-Obtener a un usuario junto con los cursos donde esta suscrito (Mostrar los mismos datos del usuario que 
-en el punto anterior junto al nombre del curso)
-Crear un usuario
-Actualizar un usuario, (solo se permitirá los nombres y la contraseña)
-Agregar un curso a un usuario
-Obtener todos los cursos
-Obtener todos los cursos junto a sus categorías y sus videos (de las categorías solo deberás mostrar el nombre, 
-de los videos solo deberás mostrar el nombre y su url
-Crear un nuevo curso
-Editar un curso (solo se permite cambiar la descripción)
-Crear videos
-Eliminar videos
-Crear categorías
-Eliminar categorías
-Crea los controladores necesarios para las peticiones en las rutas del punto 2.
+  A. Obtener a un usuario por su id (Deberás mostrar la información del usuario menos created_at, updated_at y password)
+  B. Obtener a un usuario junto con los cursos donde esta suscrito (Mostrar los mismos datos del usuario que 
+  en el punto anterior junto al nombre del curso)
+  C. Crear un usuario
+  D. Actualizar un usuario, (solo se permitirá los nombres y la contraseña)
+  E. Agregar un curso a un usuario
+  F. Obtener todos los cursos
+  G. Obtener todos los cursos junto a sus categorías y sus videos (de las categorías solo deberás mostrar el nombre, 
+  de los videos solo deberás mostrar el nombre y su url
+  H. Crear un nuevo curso
+  I. Editar un curso (solo se permite cambiar la descripción)
+  J. Crear videos
+  K. Eliminar videos
+  L. Crear categorías
+  M. Eliminar categorías
 
-Crea los Servicios necesarios para responder a las peticiones del punto 2.
+4). Crea los controladores necesarios para las peticiones en las rutas del punto 2.
+5). Crea los Servicios necesarios para responder a las peticiones del punto 2.

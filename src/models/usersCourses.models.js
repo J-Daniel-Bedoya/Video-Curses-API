@@ -1,7 +1,7 @@
 const db = require('../utils/database');
 const { DataTypes } = require('sequelize');
 const Users = require('./users.models');
-const Courses = require('./courses.model');
+const Courses = require('./courses.models');
 
 const UsersCourses = db.define('usersCourses', {
   id: {

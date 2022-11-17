@@ -8,7 +8,7 @@ const {
   // getUserWithCourses2,
   createUser,
   updateUser,
-} = require("../Controllers/users.controllers");
+} = require("../controllers/users.controllers");
 
 
 router.get("/", getAllUsers);
