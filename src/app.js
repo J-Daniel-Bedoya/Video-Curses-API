@@ -3,7 +3,8 @@ const express = require('express');
 const db = require('./utils/database');
 const initModels = require("./models/initModels");
 const handleError = require("./middlewares/error");
-const docsUsers = require("./docsUsers.json");
+const docsUsers = require("./docs/users.docs.json");
+const docsCourses = require("./docs/courses.docs.json");
 
 const app = express();
 app.use(express.json());
@@ -19,7 +20,7 @@ db.sync({ alter: true })
 initModels();
 
 app.get('/', (req, res) => {
-  res.status(200).json(docsUsers)
+  res.status(200).json(docsUsers, docsCourses)
 });
   
 app.use("/api/v1", require("./routes"))
