@@ -18,7 +18,15 @@ db.sync({ alter: true })
 initModels();
 
 app.get('/', (req, res) => {
-  res.status(200).json('Respuesta exitosa')
+  res.status(200).json({
+    status: 'Respuesta exitosa',
+    url_base: "https://video-curses-api-production.up.railway.app/api/v1",
+    todas_las_rutas: [
+      { get_para_ver_todos_los_usuarios: "/users" },
+      { get_para_ver_los_datos_de_un_usuario_en_detalle: "users/:id" },
+      { get_para_ver_los_cursos_del_usuario: "/users/:id/courses" },
+    ]
+  })
 });
   
 app.use("/api/v1", require("./routes"))
