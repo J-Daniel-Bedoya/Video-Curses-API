@@ -51,14 +51,6 @@ const videos = [
     duration: 160000,
     courseId: 2,
   },
-  {
-    title: "Enseñando React nv2",
-    description: "primera clase",
-    instructor: "Alejandra",
-    url: "tv",
-    duration: 180000,
-    courseId: 2,
-  },
 ];
 
 
