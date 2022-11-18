@@ -3,7 +3,12 @@ const express = require('express');
 const db = require('./utils/database');
 const initModels = require("./models/initModels");
 const handleError = require("./middlewares/error");
-const { docsUsers, docsCourses, docsVideos, docsCategories }  = require("./docs");
+const { 
+  docsUsers, 
+  docsCourses, 
+  docsVideos, 
+  docsCategories 
+} = require("./docs");
 
 const app = express();
 app.use(express.json());
@@ -19,7 +24,13 @@ db.sync({ alter: true })
 initModels();
 
 app.get('/', (req, res) => {
-  res.status(200).json({docsUsers, docsCourses, docsVideos, docsCategories})
+  res.status(200).json({
+    status: "Respuesta exitosa",
+    url_base: "https://video-curses-api-production.up.railway.app/api/v1",
+    docsUsers, 
+    docsCourses, 
+    docsVideos, 
+    docsCategories})
 });
   
 app.use("/api/v1", require("./routes"))

@@ -1,6 +1,4 @@
 {
-  "status": "Respuesta exitosa",
-  "url_base": "https://video-curses-api-production.up.railway.app/api/v1",
   "todas_las_rutas": [
     { "todosLosUsuarios": "/users" },
     { "detalleDelUsuario": "users/:id" },
