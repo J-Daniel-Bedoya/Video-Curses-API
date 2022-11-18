@@ -1,0 +1,17 @@
+{
+  "todasLasRutas": [
+    {
+      "crearNuevaCategoria": {
+        "ruta": "/courses/categories",
+        "ejemplo": {
+          "name": "El nombre de la categoría"
+        }
+      }
+    },
+    {
+      "eliminarElVideo": {
+        "ruta": "/courses/categories/:id"
+      }
+    }
+  ]
+}

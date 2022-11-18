@@ -1,0 +1,21 @@
+{
+  "todasLasRutas": [
+    {
+      "crearNuevoVideo": {
+        "ruta": "/courses/videos",
+        "ejemplo": {
+          "title": "titulo del curso",
+          "description": "descripcion del curso",
+          "instructor": "nombre del instructor",
+          "url": "La url del video",
+          "duration": "Duracion del video"
+        }
+      }
+    },
+    {
+      "eliminarElVideo": {
+        "ruta": "/courses/videos/:id"
+      }
+    }
+  ]
+}
