@@ -1,5 +1,5 @@
 // importamos UserServices
-const UserServices = require("../Services/users.services");
+const UserServices = require("../services/users.services");
 
 // controlador para obtener a todos los usuarios
 const getAllUsers = async (req, res, next) => {
