@@ -112,24 +112,3 @@ class CoursesServices {
 }
 
 module.exports = CoursesServices;
-
-// {
-//   title:"Clientes ilimitados",
-//   description: 
-//     "consigue clientes para tu negocio en poco tiempo",
-//   instructor: "Armando Paredes",
-//   categories: [
-//     "Marketing", 
-//     "Ventas", 
-//     "Finanzas"],
-//   videos:[
-//     {
-//       title:'Bienvenido',
-//       url:'https//:www.google.com'
-//     },
-//     {
-//       title: "Crea tu cuenta",
-//       url:"https//:www.google.com"
-//     }
-//   ],
-// }

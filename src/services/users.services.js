@@ -1,17 +1,13 @@
-// importar el modelo donde estaremos haciendo las consultas
-const Videos = require("../models/videos.models");
-const Categories = require("../models/categories.models");
 const UsersCourses = require("../models/usersCourses.models");
 const Courses = require("../models/courses.models");
 const Users = require("../models/users.models");
 
 class UserServices {
   static async getAll() {
-    // select id, username, email from users;
     try {
       const result = await Users.findAll({
         attributes: ["id", "name", "email"],
-      }); // select * from users;
+      });
       return result;
     } catch (error) {
       throw error;

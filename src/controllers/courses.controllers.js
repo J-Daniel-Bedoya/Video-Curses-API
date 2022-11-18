@@ -9,7 +9,7 @@ const getAllCourses = async (req, res, next) => {
     res.status(200).json(result);
   } catch (error) {
     next({
-      message: "no se pudieron obtener las tareas",
+      message: "No se pudo obtener los cursos",
       status: 400,
       errorContent: error,
     });
@@ -22,7 +22,7 @@ const getCourseById = async (req, res, next) => {
     res.status(200).json(result);
   } catch (error) {
     next({
-      message: "no se pudieron obtener las tareas",
+      message: "No se pudo obtener el curso",
       status: 400,
       errorContent: error,
     });
@@ -36,7 +36,7 @@ const createCourse = async (req, res, next) => {
     res.status(201).json({ message: "El curso ha sido creado exitosamente" });
   } catch (error) {
     next({
-      message: "Algo salio mal al crear la tarea",
+      message: "Algo salio mal al crear el curso",
       status: 400,
       errorContent: error,
     });
@@ -51,7 +51,7 @@ const updateCourse = async (req, res, next) => {
     res.status(200).json({ message: "Curso actualizado" });
   } catch (error) {
     next({
-      message: "No se ha podido actualizar la tarea",
+      message: "No se ha podido actualizar el curso",
       status: 400,
       error: error,
     });
@@ -65,7 +65,7 @@ const createVideo = async (req, res, next) => {
     res.status(200).json(result)
   } catch (error) {
     next({
-      message: "No se ha podido actualizar la tarea",
+      message: "No se ha podido crear el video",
       status: 400,
       error: error,
     });
@@ -78,7 +78,7 @@ const deleteVideo = async (req, res, next) => {
     res.status(200).json(result)
   } catch (error) {
     next({
-      message: "No se ha podido actualizar la tarea",
+      message: "Algo a ocurrido al tratar de eliminar el video",
       status: 400,
       error: error,
     });
@@ -92,7 +92,7 @@ const createCategories = async (req, res, next) => {
     res.status(200).json(result)
   } catch (error) {
     next({
-      message: "No se ha podido actualizar la tarea",
+      message: "No se ha podido crear la categoría",
       status: 400,
       error: error,
     });
@@ -106,7 +106,7 @@ const deleteCategories = async (req, res, next) => {
     res.status(200).json(result)
   } catch (error) {
     next({
-      message: "No se ha podido actualizar la tarea",
+      message: "Algo a ocurrido al tratar de eliminar la categoría",
       status: 400,
       error: error,
     });
