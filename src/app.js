@@ -20,7 +20,7 @@ db.sync({ alter: true })
 initModels();
 
 app.get('/', (req, res) => {
-  res.status(200).json(docsUsers, docsCourses)
+  res.status(200).json({docsUsers, docsCourses})
 });
   
 app.use("/api/v1", require("./routes"))
