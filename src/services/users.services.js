@@ -17,7 +17,7 @@ class UserServices {
   static async getById(id) {
     try {
       const result = await Users.findByPk(id, {
-        attributes: ["id", "name"],
+        attributes: ["id", "name", "email"],
       });
       return result;
     } catch (error) {
