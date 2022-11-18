@@ -25,8 +25,8 @@ initModels();
 
 app.get('/', (req, res) => {
   res.status(200).json({
-    status: "Respuesta exitosa",
-    url_base: "https://video-curses-api-production.up.railway.app/api/v1",
+    "status": "Respuesta exitosa",
+    "url_base": "https://video-curses-api-production.up.railway.app/api/v1",
     docsUsers, 
     docsCourses, 
     docsVideos, 
