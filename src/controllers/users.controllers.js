@@ -46,7 +46,7 @@ const createUser = async (req, res, next) => {
   try {
     const newUser = req.body;
     const result = await UserServices.add(newUser);
-    res.status(201).json(result);
+    res.status(201).json({message: "Exelente ahora ya eres un usuario"});
   } catch (error) {
     next({
       status: 418,
